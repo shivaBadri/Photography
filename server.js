@@ -1,9 +1,9 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import mongoose from 'mongoose';
-import cors from 'cors';
+const express = require('express');
+const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
-import authRoutes from './routes/authRoutes.js';
+const authRoutes = require('./routes/authRoutes');
 import photoRoutes from './routes/photoRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
 
@@ -28,4 +28,5 @@ mongoose.connect(process.env.MONGO_URI, {
 }).catch(err => {
   console.error('❌ MongoDB connection failed:', err.message);
 });
+
 
